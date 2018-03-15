@@ -26,7 +26,7 @@ def weights_init_classifier(m):
 class ft_net(nn.Module):
 
     def __init__(self, class_num ):
-        super().__init__()
+        super(ft_net, self).__init__()
         model_ft = models.resnet50(pretrained=True)
 
         # avg pooling to global pooling
@@ -60,7 +60,7 @@ class ft_net(nn.Module):
 class ft_net_dense(nn.Module):
 
     def __init__(self, class_num ):
-        super().__init__()
+        super(ft_net_dense, self).__init__()
         model_ft = models.densenet121(pretrained=True)
         # add pooling to the model
         # in the originial version, pooling is written in the forward function 
